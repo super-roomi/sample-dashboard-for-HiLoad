@@ -10,6 +10,7 @@ import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 
 function Navbar() {
+    {/* Make it responsive */ }
 
     return (
         <nav className='flex flex-row items-center justify-between p-2 bg-slate-200 h-14'>

@@ -11,8 +11,8 @@ function Sidebar() {
 
 
     return (
-        <div className='hidden md:inline-block'>
-            <div className='flex flex-row justify-center mt-5 mb-3'>
+        <div className='hidden md:inline-block bg-slate-100'>
+            <div className='flex flex-row justify-center mt-3 mb-3'>
                 <button className='' onClick={() => setOpened(!opened)}>
                     <MenuIcon />
                 </button>

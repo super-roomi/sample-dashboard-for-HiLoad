@@ -33,7 +33,6 @@ function Dashboard() {
                     <Cards values={312} description={'sales made'} colors={"slate-400"} />
                 </div>
             </div>
-
         </>
     )
 }

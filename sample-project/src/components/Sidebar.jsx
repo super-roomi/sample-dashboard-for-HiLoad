@@ -13,7 +13,7 @@ function Sidebar() {
     return (
         <div className='hidden md:inline-block bg-slate-100'>
             <div className='flex flex-row justify-center mt-3 mb-3'>
-                <button className='' onClick={() => setOpened(!opened)}>
+                <button className={opened ? `absolute left-0 ml-30` : ``} onClick={() => setOpened(!opened)}>
                     <MenuIcon />
                 </button>
             </div>
@@ -21,14 +21,16 @@ function Sidebar() {
             <div className='flex flex-col w-full gap-y-2'>
                 {opened ?
                     <>
-                        <Button color='black' startIcon={<HomeFilledIcon />} size='large'> Home </Button>
-                        <Button color='black' startIcon={<ChatIcon />} size='large'> Chat </Button>
-                        <Button color='black' startIcon={<ChatIcon />} size='large'> Chat </Button>
-                        <Button color='black' startIcon={<ChatIcon />} size='large'> Chat </Button>
+                        <div className="flex flex-col items-center mt-5 gap-y-3">
+                            <Button color='black' startIcon={<HomeFilledIcon />} size='large'> Home </Button>
+                            <Button color='black' startIcon={<ChatIcon />} size='large'> Chat </Button>
+                            <Button color='black' startIcon={<ChatIcon />} size='large'> Chat </Button>
+                            <Button color='black' startIcon={<ChatIcon />} size='large'> Chat </Button>
+                        </div>
                     </>
                     :
                     <>
-                        <div className='flex flex-col items-center gap-y-5'>
+                        <div className='flex flex-col items-center gap-y-3'>
                             <Button color='black'><HomeFilledIcon /></Button>
                             <Button color='black'><ChatIcon /></Button>
                             <Button color='black'><ChatIcon /></Button>

@@ -3,7 +3,6 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import AppsIcon from '@mui/icons-material/Apps';
-import TranslateIcon from '@mui/icons-material/Translate';
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
 import Select from '@mui/material/Select';
@@ -25,14 +24,14 @@ function Navbar() {
 
             {/* Account, Settings, Notifications, Languages Selector, and Apps */}
             <div className='flex flex-row items-center gap-x-6'>
-                <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-                    <InputLabel id="demo-select-small-label">Language</InputLabel>
+                <FormControl className='w-30 min-w-30 max-w-30' size="small">
+                    <InputLabel>Language</InputLabel>
                     <Select
                         label="Language"
                     >
-                        <MenuItem value={10}>English</MenuItem>
-                        <MenuItem value={20}>Arabic</MenuItem>
-                        <MenuItem value={30}>Kurdish</MenuItem>
+                        <MenuItem value={'en'}>English</MenuItem>
+                        <MenuItem value={'ar'}>Arabic</MenuItem>
+                        <MenuItem value={'kr'}>Kurdish</MenuItem>
                     </Select>
                 </FormControl>
                 <AppsIcon />

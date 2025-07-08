@@ -4,12 +4,22 @@ import Button from '@mui/material/Button';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react'
-
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 
 function Sidebar() {
     const [opened, setOpened] = useState(false);
+    const [anchorEl, setAnchorEl] = useState(false);
+    const open = Boolean(anchorEl)
 
+    const handleClick = (event) => {
+        setAnchorEl(event.currentTarget)
+    }
+
+    const handleClose = () => {
+        setAnchorEl(null)
+    }
 
     return (
         <div className='hidden md:inline-block bg-slate-100'>
@@ -28,11 +38,22 @@ function Sidebar() {
                             initial={{ x: '-100%' }}
                             animate={{ x: 0 }}
                             exit={{ x: '-100%' }}
-                            transition={{ duration: 0.4, ease: 'easeInOut' }}
+                            transition={{ duration: 0.2, ease: 'easeInOut' }}
                         >
                             <p className='text-slate-400'>Home</p>
                             <Button color='black' startIcon={<HomeFilledIcon />} size='large'> Home </Button>
-                            <Button color='black' startIcon={<ChatIcon />} size='large'> Chat </Button>
+                            {/* <Button color='black' startIcon={<ChatIcon />} size='large'> Chat </Button> */}
+                            <Button onClick={handleClick}>Comms</Button>
+                            <Menu
+                                anchorEl={anchorEl}
+                                open={open}
+                                onClose={handleClose}
+                            >
+                                <MenuItem onClose={handleClose}>Profile</MenuItem>
+                                <MenuItem onClose={handleClose}>Profile</MenuItem>
+                                <MenuItem onClose={handleClose}>Profile</MenuItem>
+                                <MenuItem onClose={handleClose}>Profile</MenuItem>
+                            </Menu>
                             <p className='text-slate-400'>Chats</p>
                             <Button color='black' startIcon={<ChatIcon />} size='large'> Chat </Button>
                             <Button color='black' startIcon={<ChatIcon />} size='large'> Chat </Button>
@@ -55,8 +76,6 @@ function Sidebar() {
                         </motion.div>
                     )}
                 </AnimatePresence>
-
-
             </div>
         </div>
     )
